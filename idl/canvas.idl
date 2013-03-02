@@ -1,3 +1,5 @@
+/* Copied from the dom.js project (https://github.com/andreasgal/dom.js) */
+
 interface CanvasRenderingContext2D {
   // back-reference to the canvas
   readonly attribute HTMLCanvasElement canvas;

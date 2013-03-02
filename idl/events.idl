@@ -1,3 +1,5 @@
+/* Copied from the dom.js project (https://github.com/andreasgal/dom.js) */
+
 // Interfaces from DOM Level 3 Events working draft
 
 interface UIEvent : Event {

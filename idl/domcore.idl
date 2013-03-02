@@ -1,3 +1,5 @@
+/* Copied from the dom.js project (https://github.com/andreasgal/dom.js) */
+
 // This is the DOM Core IDL from the 6/15 Working Draft
 // http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html
 //

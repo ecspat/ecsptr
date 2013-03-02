@@ -1,3 +1,5 @@
+/* Copied from the dom.js project (https://github.com/andreasgal/dom.js) */
+
 interface Location {
   //  stringifier attribute DOMString href;
   // XXX: for now comment out the stringifier and just add a toString method
