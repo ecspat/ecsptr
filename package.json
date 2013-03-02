@@ -1,0 +1,12 @@
+{
+    "name": "ecsptr",
+    "version": "0.1.0",
+    "author": "Max Schaefer <schaefer@ntu.edu.sg>",
+    "description": "Simple Andersen-style pointer analysis for JavaScript",
+    "dependencies" : {
+	"amdefine" : "*",
+	"webidl2" : "*",
+	"ecspat-util": "https://github.com/ecspat/util/tarball/master"
+    },
+    "license": "Eclipse"
+}

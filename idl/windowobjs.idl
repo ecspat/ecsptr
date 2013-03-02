@@ -1,0 +1,110 @@
+interface Location {
+  //  stringifier attribute DOMString href;
+  // XXX: for now comment out the stringifier and just add a toString method
+  attribute DOMString href;
+  DOMString toString();
+  void assign(DOMString url);
+  void replace(DOMString url);
+  void reload();
+
+  // URL decomposition IDL attributes
+           attribute DOMString protocol;
+           attribute DOMString host;
+           attribute DOMString hostname;
+           attribute DOMString port;
+           attribute DOMString pathname;
+           attribute DOMString search;
+           attribute DOMString hash;
+};
+
+interface History {
+  //readonly attribute long length;
+  //  readonly attribute any state;
+  void go(optional long delta);
+  void back();
+  void forward();
+  // void pushState(any data, DOMString title, optional DOMString url);
+  // void replaceState(any data, DOMString title, optional DOMString url);
+};
+
+interface Navigator {
+  readonly attribute DOMString appName;
+  readonly attribute DOMString appVersion;
+  readonly attribute DOMString platform;
+  readonly attribute DOMString userAgent;
+  readonly attribute PluginArray plugins;
+  readonly attribute MimeTypeArray mimeTypes;
+};
+
+interface PluginArray {
+  getter Plugin? item(unsigned long index);
+  readonly attribute unsigned long length;
+};
+
+interface Plugin {
+  readonly attribute DOMString description;
+  readonly attribute DOMString filename;
+  readonly attribute DOMString name;
+  readonly attribute DOMString version;
+  DOMString item(unsigned long index);
+  DOMString namedItem(DOMString name);
+};
+
+interface MimeTypeArray {
+  getter MimeType? item(unsigned long index);
+  getter MimeType? namedItem(DOMString name);
+  readonly attribute unsigned long length;
+};
+
+interface MimeType {
+  readonly attribute DOMString description;
+  readonly attribute Plugin enabledPlugin;
+  readonly attribute DOMString suffixes;
+  readonly attribute DOMString type;
+};
+
+interface Range {
+  attribute boolean collapsed;
+  attribute Node commonAncestorContainer;
+  attribute Node endContainer;
+  attribute long endOffset;
+  attribute Node startContainer;
+  attribute long startOffset;
+  DocumentFragment cloneContents();
+  void deleteContents();
+  DocumentFragment extractContents();
+  void selectNodeContents(Node refNode);
+  // TODO: many more
+
+  // IE-specific
+  void moveStart(DOMString unit, optional int count);
+  void moveEnd(DOMString unit, optional int count);
+  unsigned short moveToElementText(HTMLElement element);
+  void pasteHTML(DOMString html);
+  void select();
+  boolean inRange(Range other);
+  Range duplicate();
+  attribute DOMString htmlText;
+  attribute DOMString text;
+};
+
+interface Screen {
+  attribute long availTop;
+  attribute long availLeft;
+  attribute long availHeight;
+  attribute long availWidth;
+  attribute long colorDepth;
+  attribute long height;
+  attribute long left;
+  attribute long pixelDepth;
+  attribute long top;
+  attribute long width;
+  void lockOrientation();
+  void unlockOrientation();
+  attribute boolean mozEnabled;
+  attribute boolean mozBrightness;
+};
+
+interface XMLSerializer {
+  DOMString serializeToString();
+};

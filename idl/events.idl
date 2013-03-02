@@ -1,0 +1,42 @@
+// Interfaces from DOM Level 3 Events working draft
+
+interface UIEvent : Event {
+  readonly attribute Window view;
+  readonly attribute long            detail;
+  void                               initUIEvent(DOMString typeArg,
+                                                 boolean canBubbleArg,
+                                                 boolean cancelableArg,
+                                                 Window viewArg,
+                                                 long detailArg);
+};
+
+interface MouseEvent : UIEvent {
+  readonly attribute long            screenX;
+  readonly attribute long            screenY;
+  readonly attribute long            clientX;
+  readonly attribute long            clientY;
+  readonly attribute boolean         ctrlKey;
+  readonly attribute boolean         shiftKey;
+  readonly attribute boolean         altKey;
+  readonly attribute boolean         metaKey;
+  readonly attribute unsigned short  button;
+  readonly attribute unsigned short  buttons;
+  readonly attribute                 EventTarget     relatedTarget;
+  void                               initMouseEvent(DOMString typeArg,
+                                                boolean canBubbleArg,
+                                                boolean cancelableArg,
+                                                Window viewArg,
+                                                long detailArg,
+                                                long screenXArg,
+                                                long screenYArg,
+                                                long clientXArg,
+                                                long clientYArg,
+                                                boolean ctrlKeyArg,
+                                                boolean altKeyArg,
+                                                boolean shiftKeyArg,
+                                                boolean metaKeyArg,
+                                                unsigned short buttonArg,
+                                                EventTarget relatedTargetArg);
+  // Introduced in DOM Level 3:
+  boolean                            getModifierState(DOMString keyArg);
+};
